@@ -1,3 +1,5 @@
 node_modules
 bower_components
 web/build
+web/main.css*
+web/main.js

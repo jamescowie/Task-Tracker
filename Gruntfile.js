@@ -43,7 +43,7 @@ module.exports = function(grunt) {
             },
             local_dependencies: {
                 files: {
-                    'web/index.php': ['web/**/*.js', 'web/build/*.css'],
+                    'web/index.php': ['web/**/*.js', 'web/**/*.css'],
                 }
             }
         },
@@ -53,6 +53,17 @@ module.exports = function(grunt) {
                     'web/main.js': ['web/coffee/*.coffee'] // compile and concat into single file
                 }
             }
+        },
+        sass: {                              // Task
+            dist: {                            // Target
+                options: {                       // Target options
+                    style: 'expanded',
+                    sourcemap: false
+                },
+                files: {                         // Dictionary of files
+                    'web/main.css': 'web/sass/main.scss'
+                }
+            }
         }
     });
 
@@ -60,10 +71,11 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-bower-concat');
     grunt.loadNpmTasks('grunt-contrib-coffee');
+    grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-injector');
     grunt.loadNpmTasks('grunt-php');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'bower_concat', 'injector', 'php']);
+    grunt.registerTask('default', ['uglify', 'bower_concat', 'sass', 'injector', 'php']);
 
 };

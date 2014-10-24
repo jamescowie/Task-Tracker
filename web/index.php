@@ -4,6 +4,7 @@
   <title>Example</title>
   <!-- injector:css -->
   <link rel="stylesheet" href="build/_bower.css">
+  <link rel="stylesheet" href="main.css">
   <!-- endinjector -->
 </head>
 <body>
