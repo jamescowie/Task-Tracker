@@ -1,16 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Example</title>
-  <!-- injector:css -->
-  <link rel="stylesheet" href="build/_bower.css">
-  <link rel="stylesheet" href="main.css">
-  <!-- endinjector -->
-</head>
-<body>
-    <?php echo 'here be the content'; ?>
-  <!-- injector:js -->
-  <script src="build/_bower.js"></script>
-  <!-- endinjector -->
-</body>
-</html>
+<?php
+use Symfony\Component\Debug\Debug;
+
+require_once(__DIR__ . '/../vendor/autoload.php');
+
+$app = require __DIR__ . '/../src/app.php';
+
+Debug::enable();
+
+require __DIR__ . '/../src/config.php';
+require __DIR__ . '/../src/controllers.php';
+
+
+$app->run();

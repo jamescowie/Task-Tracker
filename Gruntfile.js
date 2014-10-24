@@ -16,7 +16,7 @@ module.exports = function(grunt) {
             test: {
                 options: {
                     keepalive: true,
-                    open: true,
+                    open: false,
                     port: 8000,
                     base: "web"
                 }
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
             },
             local_dependencies: {
                 files: {
-                    'web/index.php': ['web/**/*.js', 'web/**/*.css'],
+                    'src/templates/layout.html': ['web/**/*.js', 'web/**/*.css']
                 }
             }
         },
@@ -78,4 +78,8 @@ module.exports = function(grunt) {
     // Default task(s).
     grunt.registerTask('default', ['uglify', 'bower_concat', 'sass', 'coffee', 'injector', 'php']);
 
+    grunt.registerTask('server', 'Running PHP Server', function() {
+        grunt.log.writeln('Running php server');
+        grunt.task.run('php');
+    })
 };
