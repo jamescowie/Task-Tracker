@@ -1,0 +1,28 @@
+{
+  "name": "Journal",
+  "version": "0.0.1",
+  "homepage": "https://github.com/jamescowie/Journal",
+  "authors": [
+    "jamescowie <james@jcowie.co.uk>"
+  ],
+  "description": "A very simple Journal application",
+  "main": "web/index.php",
+  "keywords": [
+    "PHP",
+    "Journal",
+    "Silex"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~1.11.1",
+    "bootstrap": "~3.2.0"
+  }
+}

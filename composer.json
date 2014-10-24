@@ -1,0 +1,29 @@
+{
+    "name": "fabpot/silex-skeleton",
+    "description": "A pre-configured skeleton for the Silex microframework",
+    "license": "MIT",
+    "type": "project",
+    "require": {
+        "php": ">=5.3.3",
+        "silex/silex": "~1.0",
+        "require-dev": {
+            "behat/behat": "~3",
+            "phpspec/phpspec": "~2",
+            "bossa/phpspec2-expect": "dev-master",
+            "behat/mink": "*",
+            "behat/mink-extension": "*",
+            "behat/mink-goutte-driver": "*",
+            "behat/mink-selenium2-driver": "*"
+        },
+        "autoload": {
+            "psr-0": { "Diary": "src/" }
+        },
+        "extra": {
+            "branch-alias": {
+                "dev-master": "1.1.x-dev"
+            }
+        },
+        "config": {
+            "bin-dir": "bin"
+        }
+    }
