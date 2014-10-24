@@ -10,6 +10,7 @@
     <?php echo 'here be the content'; ?>
   <!-- injector:js -->
   <script src="build/_bower.js"></script>
+  <script src="main.js"></script>
   <!-- endinjector -->
 </body>
 </html>

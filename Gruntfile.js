@@ -43,7 +43,14 @@ module.exports = function(grunt) {
             },
             local_dependencies: {
                 files: {
-                    'web/index.php': ['web/build/*.js', 'web/build/*.css'],
+                    'web/index.php': ['web/**/*.js', 'web/build/*.css'],
+                }
+            }
+        },
+        coffee: {
+            compile: {
+                files: {
+                    'web/main.js': ['web/coffee/*.coffee'] // compile and concat into single file
                 }
             }
         }
@@ -52,6 +59,7 @@ module.exports = function(grunt) {
     // Load the plugin that provides the "uglify" task.
     grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-bower-concat');
+    grunt.loadNpmTasks('grunt-contrib-coffee');
     grunt.loadNpmTasks('grunt-injector');
     grunt.loadNpmTasks('grunt-php');
 
