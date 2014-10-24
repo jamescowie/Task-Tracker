@@ -76,6 +76,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-php');
 
     // Default task(s).
-    grunt.registerTask('default', ['uglify', 'bower_concat', 'sass', 'injector', 'php']);
+    grunt.registerTask('default', ['uglify', 'bower_concat', 'sass', 'coffee', 'injector', 'php']);
 
 };
