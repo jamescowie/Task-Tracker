@@ -7,6 +7,7 @@ $app = new Application();
 
 $app->register(new TwigServiceProvider());
 $app->register(new Whoops\Provider\Silex\WhoopsServiceProvider);
+$app->register(new Silex\Provider\ServiceControllerServiceProvider());
 
 $app['twig'] = $app->share($app->extend('twig', function($twig, $app) {
     return $twig;

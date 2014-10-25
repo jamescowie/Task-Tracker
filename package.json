@@ -11,6 +11,7 @@
     "grunt-php": "*",
     "grunt-bower-concat": "*",
     "grunt-injector": "*",
-    "load-grunt-tasks": "^1.0.0"
+    "load-grunt-tasks": "^1.0.0",
+    "grunt-contrib-watch": "*"
   }
 }

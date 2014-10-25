@@ -20,7 +20,8 @@ module.exports = function(grunt) {
                     port: 8000,
                     base: "web"
                 }
-            }
+            },
+            watch: {}
         },
         bower_concat: {
             all: {
@@ -43,7 +44,7 @@ module.exports = function(grunt) {
             },
             local_dependencies: {
                 files: {
-                    'src/templates/layout.html': ['web/**/*.js', 'web/**/*.css']
+                    'app/views/layout.html': ['web/**/*.js', 'web/**/*.css']
                 }
             }
         },
@@ -64,6 +65,15 @@ module.exports = function(grunt) {
                     'web/main.css': 'web/sass/main.scss'
                 }
             }
+        },
+        watch: {
+            css: {
+                files: 'web/sass/*.scss',
+                tasks: ['sass'],
+                options: {
+                    livereload: true,
+                },
+            },
         }
     });
 
@@ -74,6 +84,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-sass');
     grunt.loadNpmTasks('grunt-injector');
     grunt.loadNpmTasks('grunt-php');
+    grunt.loadNpmTasks('grunt-contrib-watch');
 
     // Default task(s).
     grunt.registerTask('default', ['uglify', 'bower_concat', 'sass', 'coffee', 'injector', 'php']);
@@ -82,4 +93,6 @@ module.exports = function(grunt) {
         grunt.log.writeln('Running php server');
         grunt.task.run('php');
     })
+
+    grunt.registerTask('phpwatch', ['php:watch', 'watch']);
 };
