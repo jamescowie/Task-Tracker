@@ -1,0 +1,7 @@
+home:
+  path: /
+  defaults: { _controller: 'Diary\Controllers\IndexController::indexAction' }
+
+hello:
+  path: /hello/{name}
+  defaults: { _controller: 'Diary\Controllers\IndexController::helloAction' }

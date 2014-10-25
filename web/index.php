@@ -1,13 +1,12 @@
 <?php
-use Symfony\Component\Debug\Debug;
+require_once '../vendor/autoload.php';
+use Diary\Application;
 
-require_once(__DIR__ . '/../vendor/autoload.php');
-
-$app = require __DIR__ . '/../app/app.php';
-
-Debug::enable();
-
-require __DIR__ . '/../app/config/config.php';
-require __DIR__ . '/../app/routes.php';
+$app = new Application(
+    [
+        'debug' => true,
+        'base.path' => __DIR__ . '/../app'
+    ]
+);
 
 $app->run();

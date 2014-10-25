@@ -7,7 +7,9 @@
         "php": ">=5.3.3",
         "silex/silex": "~1.0",
         "symfony/twig-bridge": "~2.3",
-        "filp/whoops": "1.*"
+        "filp/whoops": "1.*",
+        "symfony/yaml":"v2.2.0",
+        "symfony/config":"~2"
     },
     "require-dev": {
         "behat/behat": "~3",
