@@ -11,7 +11,7 @@ use Doctrine\ORM\Mapping\Table;
  * @Entity Task
  * @Table(name="tasks")
  */
-class Tasks
+class Task
 {
     /**
      * @Id @Column(type="integer")
@@ -20,9 +20,9 @@ class Tasks
     private $id;
 
     /** @Column(type="text") */
-    private $desciption;
+    private $description;
 
-    /** @Column(type="varchar") */
+    /** @Column(length=250) */
     private $title;
 
     /** @Column(type="datetime") */
@@ -31,23 +31,23 @@ class Tasks
     /** @Column(type="datetime") */
     private $end_date;
 
-    public function setEndDate($end_date)
+    public function setEndDate()
     {
-        $this->end_date = $end_date;
+        $this->end_date = new \DateTime('now');
     }
 
-    public function setStartDate($start_date)
+    public function setStartDate()
     {
-        $this->start_date = $start_date;
+        $this->start_date = new \DateTime('now');
     }
 
     public function setTitle($title)
     {
         $this->title = $title;
     }
-    
+
     public function setDescription($description)
     {
-        $this->desciption = $description;
+        $this->description = $description;
     }
 } 

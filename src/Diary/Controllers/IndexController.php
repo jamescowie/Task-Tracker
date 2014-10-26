@@ -20,10 +20,14 @@ class IndexController
         if ($form->isvalid()) {
             $data = $form->getData();
 
-            $post = new Task();
-            $post->setContent('Hello World');
-            $app['db.orm.em']->persist($post);
+            $task = new Task();
+            $task->setTitle($data['task']);
+            $task->setStartDate();
+            $app['db.orm.em']->persist($task);
             $app['db.orm.em']->flush();
+
+            $app['session']->getFlashBag()->add('message', 'Task saved to database');
+            $app->redirect('/');
         }
 
         return $app['twig']->render('index.twig', array('form' => $form->createView()));
