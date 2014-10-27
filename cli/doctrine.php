@@ -1,6 +1,7 @@
 <?php
 
-require_once('../vendor/autoload.php');
+require_once(__DIR__ .'/../vendor/autoload.php');
+
 $classLoader = new \Doctrine\Common\ClassLoader('Doctrine\ORM', realpath(__DIR__ . '/../../lib'));
 $classLoader->register();
 $classLoader = new \Doctrine\Common\ClassLoader('Doctrine\DBAL', realpath(__DIR__ . '/../../lib/vendor/doctrine-dbal/lib'));
