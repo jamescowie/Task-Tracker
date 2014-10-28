@@ -1,0 +1,5 @@
+<h1>All tasks</h1>
+
+{% for task in tasks %}
+    <p>{{ task.title }} -- {{ task.startdate|date('Y-m-d') }}</p>
+{% endfor %}
