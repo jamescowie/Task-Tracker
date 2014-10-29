@@ -8,7 +8,7 @@ use Doctrine\ORM\Mapping\Table;
  * Class Task
  * @package Diary\Entities
  *
- * @Entity Task
+ * @Entity (repositoryClass="Diary\Entities\TaskRepository")
  * @Table(name="tasks")
  */
 class Task
