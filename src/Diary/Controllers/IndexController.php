@@ -2,7 +2,7 @@
 
 namespace Diary\Controllers;
 
-use Diary\Entity\Task;
+use Diary\Entities\Task;
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -31,14 +31,14 @@ class IndexController
 
     public function allAction(Application $app)
     {
-         $tasks = $app['db.orm.em']->getRepository('Diary\Entity\Task');
+         $tasks = $app['db.orm.em']->getRepository('Diary\Entities\Task');
 
          return $app['twig']->render('tasks.twig', array('tasks' => $tasks->findBy(array(), array('start_date' => 'DESC'))));
     }
 
     public function completeAction(Application $app, Request $request, $id)
     {
-        $tasks = $app['db.orm.em']->find('Diary\Entity\Task', $id);
+        $tasks = $app['db.orm.em']->find('Diary\Entities\Task', $id);
 
         $tasks->setEndDate();
 

@@ -78,7 +78,7 @@ class Application extends SilexApplication
                     array(
                         'type' => 'annotation',
                         'path' => __DIR__ . '/src',
-                        'namespace' => 'Diary\Entity',
+                        'namespace' => 'Diary\Entities',
                     )
                 ),
             )

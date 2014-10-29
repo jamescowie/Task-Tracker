@@ -1,12 +1,12 @@
 <?php
 
-namespace Diary\Entity;
+namespace Diary\Entities;
 
 use Doctrine\ORM\Mapping\Table;
 
 /**
  * Class Task
- * @package Diary\Entity
+ * @package Diary\Entities
  *
  * @Entity Task
  * @Table(name="tasks")
