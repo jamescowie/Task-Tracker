@@ -1,5 +1,26 @@
-<h1>All tasks</h1>
-
-{% for task in tasks %}
-    <p>{{ task.title }} -- {{ task.startdate|date('Y-m-d') }}</p>
-{% endfor %}
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Task</th>
+                <th>Start time</th>
+                <th>Completed</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for task in tasks %}
+                <tr>
+                    <td>{{ task.title }}</td>
+                    <td>{{ task.startdate|date('Y-m-d') }}</td>
+                    <td>
+                        {% if task.enddate is null %}
+                            <a href="/posts/finish/{{ task.id }}" class="btn btn-success">Finish</a>
+                        {% else %}
+                            {{ task.enddate|date('Y-m-d') }}
+                        {% endif %}
+                    </td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>

@@ -54,7 +54,7 @@ class Task
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -64,7 +64,7 @@ class Task
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -74,7 +74,7 @@ class Task
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -84,7 +84,7 @@ class Task
     /**
      * Get start_date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getStartDate()
     {
@@ -94,7 +94,7 @@ class Task
     /**
      * Get end_date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getEndDate()
     {

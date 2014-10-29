@@ -33,7 +33,20 @@ class IndexController
     {
          $tasks = $app['db.orm.em']->getRepository('Diary\Entity\Task');
 
-         return $app['twig']->render('tasks.twig', array('tasks' => $tasks->findAll()));
+         return $app['twig']->render('tasks.twig', array('tasks' => $tasks->findBy(array(), array('start_date' => 'DESC'))));
+    }
+
+    public function completeAction(Application $app, Request $request, $id)
+    {
+        $tasks = $app['db.orm.em']->find('Diary\Entity\Task', $id);
+
+        $tasks->setEndDate();
+
+        $app['db.orm.em']->persist($tasks);
+        $app['db.orm.em']->flush();
+
+        $app['session']->getFlashBag()->add('message', 'Finished task');
+        return $app->redirect('/');
     }
 
 
@@ -46,8 +59,4 @@ class IndexController
         $app['db.orm.em']->flush();
     }
 
-    public function helloAction($name)
-    {
-        return new Response('Hello ' . $name);
-    }
 }
