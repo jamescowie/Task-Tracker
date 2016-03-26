@@ -37,6 +37,7 @@
             "dev-master": "1.1.x-dev"
         },
         "heroku": {
+            "framework": "silex",
             "document-root": "web",
             "index-document": "web/index.php"
         }
