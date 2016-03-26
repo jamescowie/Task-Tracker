@@ -13,7 +13,8 @@
         "symfony/form": "~2.3",
         "symfony/validator": "~2.3",
         "symfony/translation": "~2.3",
-        "taluu/doctrine-orm-provider": "1.0.*@dev"
+        "taluu/doctrine-orm-provider": "1.0.*@dev",
+        "heroku/heroku-buildpack-php": "*"
     },
     "require-dev": {
         "behat/behat": "~3",
