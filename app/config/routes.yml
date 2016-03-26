@@ -1,16 +1,3 @@
 home:
   path: /
-  defaults: { _controller: 'Diary\Controllers\IndexController::indexAction' }
-
-posts:
-  path: /posts
-  defaults: { _controller: 'Diary\Controllers\IndexController::allAction' }
-
-posts_complete:
-  path: /posts/finish/{id}
-  defaults: { _controller: 'Diary\Controllers\IndexController::completeAction' }
-
-
-hello:
-  path: /hello/{name}
-  defaults: { _controller: 'Diary\Controllers\IndexController::helloAction' }
+  defaults: { _controller: 'Snippets\Controllers\IndexController::indexAction' }

@@ -1,6 +1,6 @@
 <?php
 require_once '../vendor/autoload.php';
-use Diary\Application;
+use Snippets\Application;
 
 $app = new Application(
     [

@@ -13,7 +13,9 @@
         "symfony/form": "~2.3",
         "symfony/validator": "~2.3",
         "symfony/translation": "~2.3",
-        "taluu/doctrine-orm-provider": "1.0.*@dev"
+        "taluu/doctrine-orm-provider": "1.0.*@dev",
+        "symfony/security": "~2.3",
+        "symfony/security-csrf": "~2.4"
     },
     "require-dev": {
         "behat/behat": "~3",
@@ -31,7 +33,7 @@
         "heroku/heroku-buildpack-php": "*"
     },
     "autoload": {
-        "psr-0": { "Diary": "src/" }
+        "psr-0": { "Snippets": "src/" }
     },
     "extra": {
         "branch-alias": {

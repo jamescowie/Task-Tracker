@@ -1,4 +1,6 @@
-<?php namespace Diary;
+<?php
+
+namespace Snippets;
 
 use Doctrine\Common\Cache\ApcCache;
 use Doctrine\Common\Cache\ArrayCache;
